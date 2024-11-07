@@ -1,0 +1,24 @@
+/*** main ***/
+/* hero */
+.hero-container {
+    background-image: url("../images/home-hero-background.jpg");
+    background-position: center;
+    background-size: cover;
+    min-height: 50vh;
+}
+
+.hero-heading {
+    font-size: calc(1.375rem + 4.5vw);
+    font-weight: 800;
+}
+
+.hero-subheading {
+    font-size: calc(1.375rem + 1.5vw);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* cards-list */
+.cards-list-container {
+    margin-top: 5rem;
+}

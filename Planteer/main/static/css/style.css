@@ -9,21 +9,10 @@ main {
     margin-top: 5rem;
 }
 
-.hero-container {
-    background-image: url("../images/home-hero-background.jpg");
-    background-position: center;
-    background-size: cover;
-    min-height: 50vh;
-}
-
-
-.cards-list-container {
-    margin-top: 5rem;
-}
 
 /*** footer ***/
 footer {
-    margin-top: 5rem;
+    padding-top: 5rem;
 }
 
 footer a {

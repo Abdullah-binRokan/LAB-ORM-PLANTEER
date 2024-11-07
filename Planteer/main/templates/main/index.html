@@ -1,12 +1,18 @@
 {% extends 'main/base.html' %}
 
+{% load static %}
+
 {% block title %}Home Page{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
 
 {% block content %}
 <!-- start hero section -->
-<section class="hero-container">
-    <h1>Planteer</h1>
-    <h2>Plan Database for Plan Lovers</h2>
+<section class="hero-container d-flex flex-column justify-content-center align-items-center gap-3">
+    <h1 class="hero-heading">Planteer</h1>
+    <h2 class="hero-subheading">Plant Database for Plan Lovers</h2>
     <div class="search-container">
         <input type="text" name="search" />
         <button class="btn btn-dark">Search</button>
