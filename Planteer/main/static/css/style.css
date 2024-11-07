@@ -5,6 +5,61 @@
 
 
 /*** main ***/
+main {
+    margin-top: 5rem;
+}
 
+.hero-container {
+    background-image: url("../images/home-hero-background.jpg");
+    background-position: center;
+    background-size: cover;
+    min-height: 50vh;
+}
+
+
+.cards-list-container {
+    margin-top: 5rem;
+}
 
 /*** footer ***/
+footer {
+    margin-top: 5rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.right-column {
+    column-gap: 6rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.nav-item .nav-link {
+    padding-right: 0 !important;
+}
+
+
+/*** media queries ***/
+@media (max-width: 500px) {
+    .footer-columns {
+        flex-direction: column;
+    }
+
+    .right-column {
+        order: 1;
+        align-self: center;
+    }
+
+    .left-column {
+        order: 2;
+        align-self: center;
+        padding-top: 2rem;
+    }
+
+    .left-column > * {
+        text-align: center;
+    }
+}

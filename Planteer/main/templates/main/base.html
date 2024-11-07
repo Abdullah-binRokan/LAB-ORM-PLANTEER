@@ -9,36 +9,84 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     {% block style %}{% endblock %}
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                  </li>
-                </ul>
-              </div>
+    <div class="wrapper container d-flex flex-column min-vh-100 justify-content-between">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <div class="container-fluid px-0">
+                  <a class="navbar-brand pl-0" href="#">Planteer</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-center gap-4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">All Plants</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><button class="btn btn-dark">Add Plant</button></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock%}
+        </main>
+        <footer class="mt-auto">
+            <hr>
+            <div class="footer-columns d-flex justify-content-between pb-2">
+                <!-- start of left column footer -->
+                <div class="left-column d-flex flex-column justify-content-between">
+                    <h5>Site name</h5>
+                    <ul class="list-unstyled d-flex gap-3">
+                        <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                        <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                        <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <!-- end of left column footer -->
+                <!-- start of right column footer -->
+                <div class="right-column d-flex">
+                    <div>
+                        <h6>Topic</h6>
+                        <ul class="list-unstyled">
+                            <a href="#"><li>Page</li></a>
+                            <a href="#"><li>page</li></a>
+                            <a href="#"><li>Page</li></a>
+                        </ul>
+                    </div> <!-- end of 1st column -->
+                    <div>
+                        <h6>Topic</h6>
+                        <ul class="list-unstyled">
+                            </a>
+                            <a href="#"><li>Page</li></a>
+                            <a href="#"><li>page</li></a>
+                            <a href="#"><li>Page</li></a>
+                        </ul>
+                    </div> <!-- end of 2nd column -->
+                    <div>
+                        <h6>Topic</h6>
+                        <ul class="list-unstyled">
+                            </a>
+                            <a href="#"><li>Page</li></a>
+                            <a href="#"><li>page</li></a>
+                            <a href="#"><li>Page</li></a>
+                        </ul>
+                    </div> <!-- end of 3rd column -->
+                </div>
+                <!-- end of right column footer -->
             </div>
-          </nav>
-    </header>
-    <main>
-        {% block content %}
-        {% endblock%}
-    </main>
-    <footer></footer>
+        </footer>
+    </div> <!-- end of wrapper-->
 </body>
 </html>
