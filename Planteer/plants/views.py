@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
 from .models import Plant
+from django.core.paginator import Paginator
 
 # Create your views here.
 def plants_all_view(request: HttpRequest):
@@ -16,7 +17,12 @@ def plants_all_view(request: HttpRequest):
     elif "is_edible" in request.GET and len(request.GET["is_edible"]) >= 1:
         plants = Plant.objects.all().filter(is_edible = request.GET["is_edible"])
 
-    return render(request, "plants/plants_all.html", {"plants": plants})
+    # Set up pagination
+    paginator = Paginator(plants, 9)  # Show 9 plants per page
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, "plants/plants_all.html", {"page_obj": page_obj})
 
 
 def plants_detail_view(request: HttpRequest, plant_id: int):

@@ -7,6 +7,16 @@ form {
     object-fit: cover;
 }
 
+.pagination {
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+.paginator-link {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
 @media (max-width: 800px) {
     form {
         flex-direction: column;
