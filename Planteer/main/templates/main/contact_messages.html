@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}Contact Messages{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/contact_messages.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<section class="contact-msg-container container d-flex row">
+    <div class="row">
+        {% for message in messages %}
+        <div class="message col-md-6">
+            <i class="bi bi-person-circle"></i>
+            <h6>{{ message.first_name }} {{ message.last_name }}</h6>
+            <h6 class="email">{{ message.email }}</h6>
+            <p>{{ message.message }}</p>
+        </div>        
+        {% endfor %}
+    </div>    
+</section>
+{% endblock %}

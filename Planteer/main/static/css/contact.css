@@ -1,0 +1,25 @@
+.subheading {
+    color: #888;
+    font-weight: 300;
+}
+
+.form-item {
+    margin-top: 1rem;
+}
+
+.col-4 img {
+    width: 100%;
+}
+
+img {
+    margin-left: 2rem;
+    min-height: 100%;
+    border-radius: 30px;
+}
+
+
+@media (max-width: 800px) {
+    .img-container img {
+        display: none;
+    }
+}

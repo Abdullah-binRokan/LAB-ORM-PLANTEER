@@ -1,0 +1,80 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}Plants All{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'plants/css/plants_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- start of detail section -->
+<section class="">
+    <div class="">
+        <div>
+            <h1>Plants</h1>
+        </div>
+    </div>
+    <div class="plant-detail d-flex row">
+        <div class="detail-image col-6">
+            <img src="{{ plant.image.url }}" class="card-img-top" alt="...">
+        </div>
+        <div class="cards-list-body col">
+            <div class="row ">
+                <div class="col">
+                    <div class="card h-100 border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ plant.name }}</h5>
+                            <p class="card-text category">{{ plant.category }}</p>
+                            <p class="card-text">{{ plant.about }}</p>
+                            <p class="card-text">
+                                {% if plant.is_edible %}
+                                    Is edible: yes
+                                {% else %}
+                                Is edible: no
+                                {% endif %}
+                            </p>
+                            <p>Used for:</p>
+                            <p class="card-text">{{ plant.used_for }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end of plant detail -->
+ </section>
+ <!-- end of detail section -->
+<!-- start card-list section -->
+<section class="cards-list-container">
+    <div class="cards-list-header d-flex align-items-center justify-content-between">
+        <div>
+            <h1>Related plants</h1>
+        </div>
+    </div>
+    <div class="cards-list-body">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for plant in plants %}
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <img src="{{ plant.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ plant.name }}</h5>
+                        <p class="card-text">
+                            {% if plant.is_edible %}
+                                Is edible: yes
+                            {% else %}
+                            Is edible: no
+                            {% endif %}
+                        </p>
+                        <p class="card-text category">{{ plant.category }}</p>
+                        <p class="card-text">{{ plant.used_for }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+ </section>
+<!-- end card-list section -->
+{% endblock %}

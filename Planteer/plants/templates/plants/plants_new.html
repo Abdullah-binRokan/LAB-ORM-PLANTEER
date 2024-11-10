@@ -1,0 +1,63 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}Add a Plant{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'plants/css/plants_new.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="contact-page-container container d-flex row">
+     <div class="form-container col-md-8">
+       <h1>Add a new plant</h1>
+       <form action="{% url 'plants:plants_new_view' %}" method="post" enctype="multipart/form-data">
+           {% csrf_token %}
+           <div class="form-item d-flex justify-content-between gap-2 flex-wrap">
+               <div class="col">
+                   <label class="form-label" for="name">Plant name</label>
+                   <input class="form-control" type="text" name="name" placeholder="olive tree" required />
+               </div>
+           </div>
+           <div class="form-item col-12 d-flex flex-column">
+                <label for="options">Choose an option from the category:</label>
+                <select id="options" class="form-select" name="category" required>
+                    <option value="" disabled selected>Open to select from the menu</option>
+                    <option value="FLOWERS">Flowers</option>
+                    <option value="TREES">Trees</option>
+                    <option value="FRUITS">Fruits</option>
+                </select>
+           </div>
+           <div class="form-item col-12 d-flex flex-column">
+               <label class="form-label" for="about">About</label>
+               <textarea class="form-control" name="about" id="message" placeholder="Enter text" required></textarea>
+           </div>
+           <div class="form-item col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="is_edible" id="flexRadioDefault1" value="True" required>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Is edible
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="is_edible" id="flexRadioDefault2" value="False" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Not is edible
+                </label>
+              </div>
+           </div>
+           <div class="form-item col-12 d-flex flex-column">
+               <label class="form-label" for="used_for">Used for</label>
+               <textarea class="form-control" name="used_for" id="used_for" placeholder="Enter text" required></textarea>
+           </div>
+           <div class="form-item col-12">
+                <input class="form-control" type="file" name="image" id="image" accept="image/*">
+           </div>
+           <div class="form-item">
+               <button class="col-12 btn btn-dark" type="submit">Submit</button>
+           </div>
+       </form>
+     </div>
+</section>
+{% endblock %}
