@@ -5,7 +5,7 @@
 {% block title %}Plants All{% endblock %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'plants/css/plants_all.css' %}">
+<link rel="stylesheet" href="{% static 'plants/css/plants_search.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -15,19 +15,9 @@
         <div class="d-flex justify-content-between align-items-center w-100">
             <h1>All Plants</h1>
             <div>
-                <form class="d-flex gap-2" action="{% url 'plants:plants_all_view' %}" method="get">
-                    <select name="category" id="category">
-                        <option value="">Select a category</option>
-                        <option value="FLOWERS" {% if request.GET.category == 'FLOWERS' %}selected{% endif %}>Flowers</option>
-                        <option value="TREES" {% if request.GET.category == 'TREES' %}selected{% endif %}>Trees</option>
-                        <option value="FRUITS" {% if request.GET.category == 'FRUITS' %}selected{% endif %}>Fruits</option>
-                    </select>
-                    <select name="is_edible" id="is_edible">
-                        <option value="">Select edible or not</option>
-                        <option value="True" {% if request.GET.is_edible == 'True' %}selected{% endif %}>Is edible</option>
-                        <option value="False" {% if request.GET.is_edible == 'False' %}selected{% endif %}>Not edible</option>
-                    </select>
-                    <input class="btn btn-dark" type="submit" >
+                <form class="d-flex gap-2" action="{% url 'plants:plants_search_view' %}" method="get">
+                    <input type="text" name="search" />
+                    <input class="btn btn-dark" type="submit" value="Search">
                 </form>
             </div>
         </div>

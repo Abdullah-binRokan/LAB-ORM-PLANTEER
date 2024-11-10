@@ -5,7 +5,7 @@ from plants.models import Plant
 
 # Create your views here.
 def home_view(request: HttpRequest):
-    plants = Plant.objects.all()[1:4]
+    plants = Plant.objects.all()[:3]
 
     return render(request, "main/index.html", {"plants": plants})
 
